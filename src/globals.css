@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(to bottom, #0a0e27, #1a1f3a);
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Starfield background */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.star {
+  animation: twinkle 3s ease-in-out infinite;
+  position: absolute;
+}
+
+/* Glow effects */
+.glow-blur {
+  filter: blur(40px);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.8), 0 0 20px rgba(183, 0, 255, 0.6);
+}
+
+.border-glow {
+  border-color: rgba(0, 212, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.3), inset 0 0 15px rgba(0, 212, 255, 0.1);
+}
+
+/* Smooth transitions */
+@layer components {
+  .btn-neon {
+    @apply px-6 py-2 rounded-lg font-semibold transition-all duration-300;
+    background: linear-gradient(135deg, #00d4ff, #b700ff);
+    border: 2px solid transparent;
+    
+    &:hover {
+      @apply shadow-lg;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(183, 0, 255, 0.4);
+      transform: translateY(-2px);
+    }
+  }
+
+  .card-glow {
+    @apply bg-space-800 border border-neon-cyan rounded-lg p-6;
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.2);
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 0 30px rgba(0, 245, 255, 0.4), 0 0 60px rgba(0, 212, 255, 0.2);
+    }
+  }
+}
