@@ -3,19 +3,21 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-interface MissionProps {
+interface StarshipProps {
   number: number
   title: string
   description: string
   status: 'active' | 'completed' | 'planned'
+  image?: string
   delay?: number
 }
 
-const MissionCard: React.FC<MissionProps> = ({
+const StarshipCard: React.FC<StarshipProps> = ({
   number,
   title,
   description,
   status,
+  image,
   delay = 0,
 }) => {
   const statusColors = {
@@ -32,62 +34,82 @@ const MissionCard: React.FC<MissionProps> = ({
 
   return (
     <motion.div
-      className={`border-2 rounded-lg p-6 ${statusColors[status]} backdrop-blur-sm`}
+      className={`border-2 rounded-lg p-6 ${statusColors[status]} backdrop-blur-sm relative overflow-hidden group h-full`}
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, delay }}
       viewport={{ once: true }}
       whileHover={{ x: 10 }}
     >
-      <div className="flex items-start justify-between mb-4">
-        <div className="text-4xl font-bold text-neon-cyan opacity-20">
-          {String(number).padStart(2, '0')}
+      {/* Background image */}
+      {image && (
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-30 group-hover:opacity-50 transition-opacity duration-300"
+          style={{
+            backgroundImage: `url(${image})`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            zIndex: 0,
+          }}
+        />
+      )}
+      
+      <div className="relative z-10 flex flex-col h-full">
+        <div className="flex items-start justify-between mb-4">
+          <div className="text-4xl font-bold text-neon-cyan opacity-20">
+            {String(number).padStart(2, '0')}
+          </div>
+          <span className="text-xs px-3 py-1 bg-white/10 rounded-full backdrop-blur-sm">
+            {statusLabels[status]}
+          </span>
         </div>
-        <span className="text-xs px-3 py-1 bg-white/10 rounded-full">
-          {statusLabels[status]}
-        </span>
+        <h3 className="text-2xl font-bold mb-2">{title}</h3>
+        <p className="text-white/60">{description}</p>
       </div>
-      <h3 className="text-2xl font-bold mb-2">{title}</h3>
-      <p className="text-white/60">{description}</p>
     </motion.div>
   )
 }
 
-export const Missions: React.FC = () => {
-  const missions = [
+export const Starships: React.FC = () => {
+  const starships = [
     {
       number: 1,
-      title: 'Operação Centauro',
+      title: 'Polaris',
       description:
-        'Primeira missão tripulada para Proxima Centauri com objetivo de estabelecer colônia permanente.',
+        'Nave exploratória de classe Centauro com capacidade de velocidade superluminal para exploração intergaláctica.',
       status: 'active' as const,
+      image: '/images/starships/polaris.webp',
     },
     {
       number: 2,
-      title: 'Sonda Andômeda',
+      title: 'Idris',
       description:
-        'Missão de reconhecimento não-tripulada para a galáxia de Andrômeda com duração de 150 anos.',
+        'Nave de comando otima para missoes militares ainda mais com seu canhao de raio de plasma.',
       status: 'active' as const,
+      image: '/images/starships/idris.jpg',
     },
     {
       number: 3,
-      title: 'Resgate Orbital',
+      title: 'Kraken',
       description:
-        'Operação bem-sucedida de salvamento de tripulação em órbita de Marte. Todos retornaram com segurança.',
+        'Nave de guerra de classe Kraken com capacidade de combate e defesa uma nave parecida com porto avioes so que de naves.',
       status: 'completed' as const,
+      image: '/images/starships/kraken.jpg',
     },
     {
       number: 4,
-      title: 'Forja Intergaláctica',
+      title: 'I900',
       description:
-        'Construção da maior estação espacial da história para servir como hub comercial intergaláctico.',
+        'Maior nave de luxo com novos desenvolvimento de tecnologias.',
       status: 'planned' as const,
+      image: '/images/starships/i900.webp',
     },
   ]
 
   return (
     <section
-      id="missions"
+      id="starships"
       className="min-h-screen py-24 px-6 relative bg-gradient-to-b from-dark-800 via-black to-dark-900 overflow-hidden"
     >
       {/* Background accents */}
@@ -105,27 +127,28 @@ export const Missions: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-neon-cyan to-neon-purple bg-clip-text text-transparent">
-            Nossas Missões
+            Nossa Frota de Naves
           </h2>
           <p className="text-white/60 text-lg">
-            Projetos ambiciosos que moldam o futuro da humanidade
+            Naves de exploração que dominam as fronteiras do universo
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {missions.map((mission, idx) => (
-            <MissionCard
+          {starships.map((starship, idx) => (
+            <StarshipCard
               key={idx}
-              number={mission.number}
-              title={mission.title}
-              description={mission.description}
-              status={mission.status}
+              image={starship.image}
+              number={starship.number}
+              title={starship.title}
+              description={starship.description}
+              status={starship.status}
               delay={idx * 0.1}
             />
           ))}
         </div>
 
-        {/* Mission timeline */}
+        {/* Fleet expansion timeline */}
         <motion.div
           className="mt-20 p-8 bg-dark-800 border border-neon-cyan/30 rounded-lg"
           initial={{ opacity: 0, y: 20 }}
@@ -134,14 +157,14 @@ export const Missions: React.FC = () => {
           viewport={{ once: true }}
         >
           <h3 className="text-2xl font-bold mb-4 text-neon-cyan">
-            Cronograma Futuro
+            Cronograma de Expansão
           </h3>
           <div className="space-y-4">
             {[
-              { year: '2025', event: 'Lançamento da Operação Centauro' },
-              { year: '2027', event: 'Chegada em órbita de Marte' },
-              { year: '2030', event: 'Primeira colônia lunar expandida' },
-              { year: '2035', event: 'Chegada em Proxima Centauri' },
+              { year: '2025', event: 'Lançamento do Intrepidus' },
+              { year: '2027', event: 'Integração da Nebula X1' },
+              { year: '2030', event: 'Frotas regionais estabelecidas' },
+              { year: '2035', event: 'Lançamento da Forja Estelar' },
             ].map((item, idx) => (
               <motion.div
                 key={idx}

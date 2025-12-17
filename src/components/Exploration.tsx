@@ -17,7 +17,7 @@ const ExplorationCard: React.FC<ExplorationCardProps> = ({
   delay = 0,
 }) => (
   <motion.div
-    className="relative group min-h-64 flex flex-col justify-between p-6 border border-neon-cyan/30 rounded-lg bg-space-900/50 backdrop-blur-sm overflow-hidden hover:border-neon-cyan/70 transition-all"
+    className="relative group min-h-64 flex flex-col justify-between p-6 border border-neon-cyan/30 rounded-lg bg-dark-900/50 backdrop-blur-sm overflow-hidden hover:border-neon-cyan/70 transition-all"
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6, delay }}
@@ -64,7 +64,7 @@ export const Exploration: React.FC = () => {
   return (
     <section
       id="exploration"
-      className="min-h-screen py-24 px-6 relative bg-gradient-to-b from-space-900 via-black to-space-900 overflow-hidden"
+      className="min-h-screen py-24 px-6 relative bg-gradient-to-b from-dark-900 via-black to-dark-900 overflow-hidden"
     >
       {/* Background accents */}
       <div className="absolute inset-0 pointer-events-none">

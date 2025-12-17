@@ -3,14 +3,14 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-interface TechItemProps {
+interface FloraItemProps {
   icon: string
   name: string
   description: string
   delay?: number
 }
 
-const TechItem: React.FC<TechItemProps> = ({
+const FloraItem: React.FC<FloraItemProps> = ({
   icon,
   name,
   description,
@@ -28,49 +28,49 @@ const TechItem: React.FC<TechItemProps> = ({
       <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/10 to-neon-purple/10 opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
       
       <div className="text-5xl mb-3">{icon}</div>
-      <h3 className="text-xl font-bold mb-2 bg-gradient-to-r from-gray-900 to-gray-900 bg-clip-text text-transparent">{name}</h3>
+      <h3 className="text-xl font-bold mb-2 bg-gradient-to-r from-neon-cyan to-neon-blue bg-clip-text text-transparent">{name}</h3>
       <p className="text-sm text-white/60 group-hover:text-white/80 transition-colors">{description}</p>
     </div>
   </motion.div>
 )
 
-export const Technology: React.FC = () => {
-  const technologies = [
+export const Flora: React.FC = () => {
+  const flora = [
     {
-      icon: '⚙️',
-      name: 'Propulsão Warp',
-      description: 'Tecnologia de distorção espaço-tempo para velocidade superluminal',
+      icon: '🌿',
+      name: 'Flores Luminescentes',
+      description: 'Plantas que emanam luz própria, encontradas em planetas com atmosferas especiais',
     },
     {
-      icon: '🛡️',
-      name: 'Escudos Plasmáticos',
-      description: 'Proteção contra radiação e impactos de asteroides',
+      icon: '🪴',
+      name: 'Árvores Sencientes',
+      description: 'Organismos vegetais com consciência própria e capacidade de comunicação telepática',
     },
     {
-      icon: '🤖',
-      name: 'IA Quântica',
-      description: 'Inteligência artificial baseada em computação quântica',
+      icon: '🌳',
+      name: 'Florestas Cristalinas',
+      description: 'Ecossistemas onde a flora e minerais cristalinos coexistem em harmonia',
     },
     {
-      icon: '🔋',
-      name: 'Reatores de Fusão',
-      description: 'Geração infinita de energia através da fusão nuclear',
+      icon: '💐',
+      name: 'Flores Dimensionais',
+      description: 'Plantas que existem em múltiplas dimensões simultaneamente',
     },
     {
-      icon: '📡',
-      name: 'Comunicação Hiperespacial',
-      description: 'Transmissão instantânea através de dimensões paralelas',
+      icon: '🌲',
+      name: 'Árvores Antígenas',
+      description: 'Organismos que existem há milhões de anos, guardiões da história galáctica',
     },
     {
-      icon: '🔬',
-      name: 'Terraformação Ativa',
-      description: 'Modificação ambiental para habitação humana em dias',
+      icon: '🍄',
+      name: 'Fungos Cósmicos',
+      description: 'Microorganismos que transformam matéria em energia através da fotossíntese cósmica',
     },
   ]
 
   return (
     <section
-      id="technology"
+      id="flora"
       className="min-h-screen py-24 px-6 relative bg-gradient-to-b from-black via-dark-900 to-dark-800 overflow-hidden"
     >
       {/* Background accents */}
@@ -87,27 +87,27 @@ export const Technology: React.FC = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-gray-900  via-gray-900  to-gray-900 bg-clip-text text-transparent">
-            Tecnologias Avançadas
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-purple bg-clip-text text-transparent">
+            Flora Cósmica
           </h2>
           <p className="text-white/60 text-lg">
-            Inovações que definem o futuro da exploração espacial
+            Biodiversidade extraordinária dos mundos que exploramos
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {technologies.map((tech, idx) => (
-            <TechItem
+          {flora.map((item, idx) => (
+            <FloraItem
               key={idx}
-              icon={tech.icon}
-              name={tech.name}
-              description={tech.description}
+              icon={item.icon}
+              name={item.name}
+              description={item.description}
               delay={idx * 0.1}
             />
           ))}
         </div>
 
-        {/* Tech specs section */}
+        {/* Flora specs section */}
         <motion.div
           className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8"
           initial={{ opacity: 0, y: 20 }}
@@ -117,19 +117,19 @@ export const Technology: React.FC = () => {
         >
           {[
             {
-              label: 'Velocidade Máxima',
-              value: '99.99c',
-              desc: 'Velocidade da luz',
+              label: 'Espécies Catalogadas',
+              value: '10.847',
+              desc: 'Organismos únicos',
             },
             {
-              label: 'Autonomia de Voo',
-              value: '50 Anos',
-              desc: 'Sem necessidade de reabastecimento',
+              label: 'Mundos Explorados',
+              value: '342',
+              desc: 'Biomas diferentes',
             },
             {
-              label: 'Capacidade de Carga',
-              value: '10.000 T',
-              desc: 'Toneladas métricas',
+              label: 'Potencial Genético',
+              value: '99%',
+              desc: 'Ainda desconhecido',
             },
           ].map((spec, idx) => (
             <div

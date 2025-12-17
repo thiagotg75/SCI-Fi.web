@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  background: linear-gradient(to bottom, #0a0e27, #1a1f3a);
+  background: linear-gradient(to bottom, #111827, #1f2937);
   color: #ffffff;
   font-family: 'Space Grotesk', sans-serif;
   overflow-x: hidden;
@@ -38,7 +38,7 @@ body {
 }
 
 .text-glow {
-  text-shadow: 0 0 10px rgba(0, 212, 255, 0.8), 0 0 20px rgba(183, 0, 255, 0.6);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.8), 0 0 20px rgba(34, 32, 34, 0.6);
 }
 
 .border-glow {
@@ -61,12 +61,12 @@ body {
   }
 
   .card-glow {
-    @apply bg-space-800 border border-neon-cyan rounded-lg p-6;
-    box-shadow: 0 0 20px rgba(0, 245, 255, 0.2);
+    @apply bg-dark-800 border border-neon-cyan rounded-lg p-6;
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
     transition: all 0.3s ease;
 
     &:hover {
-      box-shadow: 0 0 30px rgba(0, 245, 255, 0.4), 0 0 60px rgba(0, 212, 255, 0.2);
+      box-shadow: 0 0 30px rgba(6, 182, 212, 0.4), 0 0 60px rgba(59, 130, 246, 0.2);
     }
   }
 }

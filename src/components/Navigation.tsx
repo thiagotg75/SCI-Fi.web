@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -19,8 +20,8 @@ export const Navigation: React.FC = () => {
   const navItems = [
     { label: 'Início', href: '#home' },
     { label: 'Exploração', href: '#exploration' },
-    { label: 'Missões', href: '#missions' },
-    { label: 'Tecnologia', href: '#technology' },
+    { label: 'Naves', href: '#starships' },
+    { label: 'Flora', href: '#flora' },
     { label: 'Contato', href: '#contact' },
   ]
 
@@ -28,7 +29,7 @@ export const Navigation: React.FC = () => {
     <motion.nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'backdrop-blur-md bg-space-900/90 border-b border-neon-cyan/20'
+          ? 'backdrop-blur-md bg-dark-900/90 border-b border-neon-cyan/20'
           : 'bg-gradient-to-b from-black/60 to-transparent'
       }`}
       initial={{ y: -100 }}
@@ -38,12 +39,31 @@ export const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <motion.div
-          className="flex items-center gap-2"
+          className="flex items-center gap-3"
           whileHover={{ scale: 1.05 }}
         >
-          <div className="text-2xl">🚀</div>
-          <div className="text-2xl font-black bg-gradient-to-r from-neon-cyan to-neon-purple bg-clip-text text-transparent">
-            SCI-FI SPACE
+          <div className="w-10 h-10">
+            <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeWidth="2" className="w-full h-full text-neon-cyan">
+              <text x="100" y="25" fontSize="24" fontWeight="bold" textAnchor="middle" fill="currentColor" fontFamily="Arial, sans-serif">STAR</text>
+              <circle cx="100" cy="100" r="60"/>
+              <circle cx="100" cy="100" r="50"/>
+              <circle cx="100" cy="100" r="40"/>
+              <path d="M 100 60 L 110 85 L 135 85 L 115 100 L 125 125 L 100 110 L 75 125 L 85 100 L 65 85 L 90 85 Z" fill="currentColor"/>
+              <g>
+                <path d="M 75 85 Q 70 80 68 75 Q 66 70 65 65" strokeLinecap="round"/>
+                <path d="M 75 95 Q 68 95 63 98" strokeLinecap="round"/>
+                <path d="M 75 105 Q 70 108 65 115" strokeLinecap="round"/>
+              </g>
+              <g>
+                <path d="M 125 85 Q 130 80 132 75 Q 134 70 135 65" strokeLinecap="round"/>
+                <path d="M 125 95 Q 132 95 137 98" strokeLinecap="round"/>
+                <path d="M 125 105 Q 130 108 135 115" strokeLinecap="round"/>
+              </g>
+              <text x="100" y="210" fontSize="24" fontWeight="bold" textAnchor="middle" fill="currentColor" fontFamily="Arial, sans-serif">CITIZEN</text>
+            </svg>
+          </div>
+          <div className="text-lg font-black bg-gradient-to-r from-neon-cyan to-neon-purple bg-clip-text text-transparent">
+            STAR CITIZEN
           </div>
         </motion.div>
 

@@ -1,0 +1,33 @@
+<svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2">
+  <!-- Star Text -->
+  <text x="100" y="25" font-size="24" font-weight="bold" text-anchor="middle" fill="currentColor" font-family="Arial, sans-serif">STAR</text>
+  
+  <!-- Outer circle -->
+  <circle cx="100" cy="100" r="60"/>
+  
+  <!-- Middle circle -->
+  <circle cx="100" cy="100" r="50"/>
+  
+  <!-- Inner circle -->
+  <circle cx="100" cy="100" r="40"/>
+  
+  <!-- Star shape in center -->
+  <path d="M 100 60 L 110 85 L 135 85 L 115 100 L 125 125 L 100 110 L 75 125 L 85 100 L 65 85 L 90 85 Z" fill="currentColor"/>
+  
+  <!-- Left laurel -->
+  <g>
+    <path d="M 75 85 Q 70 80 68 75 Q 66 70 65 65" stroke-linecap="round"/>
+    <path d="M 75 95 Q 68 95 63 98" stroke-linecap="round"/>
+    <path d="M 75 105 Q 70 108 65 115" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Right laurel -->
+  <g>
+    <path d="M 125 85 Q 130 80 132 75 Q 134 70 135 65" stroke-linecap="round"/>
+    <path d="M 125 95 Q 132 95 137 98" stroke-linecap="round"/>
+    <path d="M 125 105 Q 130 108 135 115" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Citizen Text -->
+  <text x="100" y="210" font-size="24" font-weight="bold" text-anchor="middle" fill="currentColor" font-family="Arial, sans-serif">CITIZEN</text>
+</svg>

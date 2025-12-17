@@ -40,7 +40,7 @@ export const Hero: React.FC<HeroProps> = ({ title, subtitle, cta }) => {
         </video>
 
         {/* Cinematic gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-space-900/60 to-space-900 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-900/60 to-dark-900 z-10" />
 
         {/* Dynamic parallax background */}
         <motion.div

@@ -7,7 +7,7 @@ export const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen py-24 px-6 relative bg-gradient-to-b from-space-900 via-black to-space-900 flex items-center overflow-hidden"
+      className="min-h-screen py-24 px-6 relative bg-gradient-to-b from-dark-900 via-black to-dark-900 flex items-center overflow-hidden"
     >
       {/* Background accents */}
       <div className="absolute inset-0 pointer-events-none">
@@ -32,7 +32,7 @@ export const Contact: React.FC = () => {
         </motion.div>
 
         <motion.form
-          className="border border-neon-cyan/30 rounded-lg p-8 bg-space-900/50 backdrop-blur-sm"
+          className="border border-neon-cyan/30 rounded-lg p-8 bg-dark-900/50 backdrop-blur-sm"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -40,32 +40,32 @@ export const Contact: React.FC = () => {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
-              <label className="block text-sm font-semibold mb-2 bg-gradient-to-r from-neon-cyan to-neon-blue bg-clip-text text-transparent">
+              <label className="block text-sm font-semibold mb-2 bg-gradient-to-r from-white to-white bg-clip-text text-transparent">
                 Nome Completo
               </label>
               <input
                 type="text"
-                className="w-full bg-space-900/50 border border-neon-cyan/40 rounded-lg px-4 py-2 text-white placeholder-white/40 focus:outline-none focus:border-neon-cyan focus:bg-space-900/80 transition-all"
+                className="w-full bg-dark-900/50 border border-neon-cyan/40 rounded-lg px-4 py-2 text-gray-900 placeholder-white/40 focus:outline-none focus:border-neon-cyan focus:bg-dark-900/80 transition-all"
                 placeholder="Seu nome"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold mb-2 bg-gradient-to-r from-neon-cyan to-neon-blue bg-clip-text text-transparent">
+              <label className="block text-sm font-semibold mb-2 bg-gradient-to-r from-white to-white bg-clip-text text-transparent">
                 Email
               </label>
               <input
                 type="email"
-                className="w-full bg-space-900/50 border border-neon-cyan/40 rounded-lg px-4 py-2 text-white placeholder-white/40 focus:outline-none focus:border-neon-cyan focus:bg-space-900/80 transition-all"
+                className="w-full bg-dark-900/50 border border-neon-cyan/40 rounded-lg px-4 py-2 text-gray-900 placeholder-white/40 focus:outline-none focus:border-gray-900  focus:bg-dark-900/80 transition-all"
                 placeholder="seu@email.com"
               />
             </div>
           </div>
 
           <div className="mb-6">
-            <label className="block text-sm font-semibold mb-2 bg-gradient-to-r from-neon-cyan to-neon-blue bg-clip-text text-transparent">
+            <label className="block text-sm font-semibold mb-2 bg-gradient-to-r from-white to-white bg-clip-text text-transparent">
               Especialidade
             </label>
-            <select className="w-full bg-space-900/50 border border-neon-cyan/40 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-neon-cyan focus:bg-space-900/80 transition-all">
+            <select className="w-full bg-dark-900/50 border border-neon-cyan/40 rounded-lg px-4 py-2 text-gray-900 focus:outline-none focus:border-gray-900  focus:bg-dark-900/80 transition-all">
               <option>Astronauta</option>
               <option>Engenheiro Aeroespacial</option>
               <option>Cientista</option>
@@ -75,11 +75,11 @@ export const Contact: React.FC = () => {
           </div>
 
           <div className="mb-6">
-            <label className="block text-sm font-semibold mb-2 bg-gradient-to-r from-neon-cyan to-neon-blue bg-clip-text text-transparent">
+            <label className="block text-sm font-semibold mb-2 bg-gradient-to-r from-white to-white bg-clip-text text-transparent">
               Mensagem
             </label>
             <textarea
-              className="w-full bg-space-900/50 border border-neon-cyan/40 rounded-lg px-4 py-2 text-white placeholder-white/40 focus:outline-none focus:border-neon-cyan focus:bg-space-900/80 transition-all h-32 resize-none"
+                className="w-full bg-dark-900/50 border border-neon-cyan/40 rounded-lg px-4 py-2 text-gray-900 placeholder-white/40 focus:outline-none focus:border-gray-900  focus:bg-dark-900/80 transition-all h-32 resize-none"
               placeholder="Conte-nos sobre sua experiência espacial..."
             />
           </div>
@@ -91,7 +91,7 @@ export const Contact: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan to-neon-purple opacity-100 group-hover:opacity-80 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-900  to-neon-blue opacity-100 group-hover:opacity-80 transition-opacity" />
               <span className="relative z-10 text-black">Enviar Mensagem</span>
             </motion.button>
             <span className="text-white/50 text-sm">

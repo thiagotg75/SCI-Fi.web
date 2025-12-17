@@ -9,17 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        space: {
-          900: '#0a0e27',
-          800: '#1a1f3a',
-          700: '#2a2f4a',
-          600: '#3a3f5a',
+        dark: {
+          900: '#111827',
+          800: '#1f2937',
+          700: '#374151',
+          600: '#4b5563',
         },
         neon: {
-          blue: '#00d4ff',
-          purple: '#b700ff',
-          pink: '#ff006e',
-          cyan: '#00f5ff',
+          blue: '#3b82f6',
+          purple: '#8b5cf6',
+          pink: '#ec4899',
+          cyan: '#06b6d4',
         },
       },
       fontFamily: {
